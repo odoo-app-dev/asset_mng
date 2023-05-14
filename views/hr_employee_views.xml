@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <record id="res_partner_view_form_inherit_assets" model="ir.ui.view">-->
+<!--        <field name="name">base.view_partner_form</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.view_partner_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//page[@name='contact_addresses']" position="after">-->
+<!--                <page name="assets" string="Assets">-->
+<!--                    <field name="assets" widget="many2many"/>-->
+<!--                </page>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+    <record id="hr_view_employee_form_inherit_assets" model="ir.ui.view">
+        <field name="name">hr.employee.form</field>
+        <field name="model">hr.employee</field>
+        <field name="groups_id" eval="[(4, ref('asset_mng.group_asset_mng_users'), 0)]"/>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='public']" position="after">
+                <page name="assets" string="Assets" >
+                    <field name="assets" widget="many2many" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

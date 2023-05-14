@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asset_mng_asset_mng_admin,asset_mng.asset_mng,model_asset_mng_asset_mng,group_asset_mng_admins,1,1,1,1
+access_asset_mng_product1_admin,asset_mng.product1,model_asset_mng_product,group_asset_mng_admins,1,1,1,1
+access_asset_mng_brand_admin,asset_mng.brand,model_asset_mng_brand,group_asset_mng_admins,1,1,1,1
+access_asset_mng_model_admin,asset_mng.model,model_asset_mng_model,group_asset_mng_admins,1,1,1,1
+access_asset_mng_performance_admin,asset_mng.performance,model_asset_mng_performance,group_asset_mng_admins,1,1,1,1
+
+access_asset_mng_report_wizard_admin,asset_mng.report.wizard,model_asset_mng_report_wizard,group_asset_mng_admins,1,1,1,1
+access_asset_mng_asset_mng_user,asset_mng.asset_mng,model_asset_mng_asset_mng,group_asset_mng_users,1,1,0,0
+access_asset_mng_product1_user,asset_mng.product1,model_asset_mng_product,group_asset_mng_users,1,0,0,0
+access_asset_mng_brand_user,asset_mng.brand,model_asset_mng_brand,group_asset_mng_users,1,0,0,0
+access_asset_mng_model_user,asset_mng.model,model_asset_mng_model,group_asset_mng_users,1,0,0,0

@@ -1,0 +1,500 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* asset_mng
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-05 09:33+0000\n"
+"PO-Revision-Date: 2022-05-05 14:31+0430\n"
+"Last-Translator: Arash Homayounfar <homayounfar@msn.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fa\n"
+"X-Generator: Poedit 2.2\n"
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__asset_id
+#: model_terms:ir.ui.view,arch_db:asset_mng.form
+msgid "6nnn-nnnnnn"
+msgstr ""
+
+#. module: asset_mng
+#: code:addons/asset_mng/models/models.py:0
+#, python-format
+msgid "Acceptable Asset ID 6nnn-nnnnnn"
+msgstr "شماره دارایی باید به شکل 6nnn-nnnnnn باشد"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__asset_id
+msgid "Asset ID"
+msgstr "شماره دارایی"
+
+#. module: asset_mng
+#: model:ir.ui.menu,name:asset_mng.assets_list
+msgid "Asset List"
+msgstr "لیست دارایی"
+
+#. module: asset_mng
+#: model:ir.module.category,name:asset_mng.module_category_asset_mng
+#: model:ir.ui.menu,name:asset_mng.menu_root
+msgid "Asset Management"
+msgstr "مدیریت دارایی"
+
+#. module: asset_mng
+#: model:res.groups,name:asset_mng.group_asset_mng_admins
+msgid "Asset Management Administrators"
+msgstr ""
+
+#. module: asset_mng
+#: model:res.groups,name:asset_mng.group_asset_mng_users
+msgid "Asset Management Users"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.actions.act_window,name:asset_mng.action_window
+#: model:ir.actions.act_window,name:asset_mng.brand_action_window
+#: model:ir.actions.act_window,name:asset_mng.model_action_window
+#: model:ir.actions.act_window,name:asset_mng.products_action_window
+msgid "AssetMng window"
+msgstr "دارایی"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_hr_employee__assets
+#: model:ir.model.fields,field_description:asset_mng.field_res_partner__assets
+#: model:ir.model.fields,field_description:asset_mng.field_res_users__assets
+#: model:ir.ui.menu,name:asset_mng.assets
+#: model_terms:ir.ui.view,arch_db:asset_mng.hr_view_employee_form_inherit_assets
+msgid "Assets"
+msgstr "دارایی ها"
+
+#. module: asset_mng
+#: model:ir.module.category,description:asset_mng.module_category_asset_mng
+msgid "Assets."
+msgstr "دارایی ها"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__date
+msgid "Assign date"
+msgstr "تاریخ"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields.selection,name:asset_mng.selection__asset_mng_asset_mng__availability__avilable
+msgid "Available"
+msgstr "آماده به کار"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__availability
+msgid "Availablibility"
+msgstr "آماده به کار بودن"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__product_brand
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand__brand
+msgid "Brand"
+msgstr "برند"
+
+#. module: asset_mng
+#: model:ir.ui.menu,name:asset_mng.brands_setting
+msgid "Brands"
+msgstr "برند ها"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__company
+msgid "Company"
+msgstr "شرکت"
+
+#. module: asset_mng
+#: model:ir.model,name:asset_mng.model_res_partner
+msgid "Contact"
+msgstr "مخاطب"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__create_uid
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand__create_uid
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model__create_uid
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product__create_uid
+msgid "Created by"
+msgstr "ایجاد شده توسط"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__create_date
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand__create_date
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model__create_date
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: asset_mng
+#: model:ir.ui.menu,name:asset_mng.customers
+msgid "Customers"
+msgstr "مخاطب ها"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__description
+#: model_terms:ir.ui.view,arch_db:asset_mng.form
+msgid "Description"
+msgstr "توضیحات"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__display_name
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand__display_name
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model__display_name
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product__display_name
+msgid "Display Name"
+msgstr "نمام نمایسی"
+
+#. module: asset_mng
+#: code:addons/asset_mng/models/models.py:0
+#, python-format
+msgid "Duplicate Asset ID error"
+msgstr "خطای شماره دارایی تکراری"
+
+#. module: asset_mng
+#: model:ir.model,name:asset_mng.model_hr_employee
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__employee
+msgid "Employee"
+msgstr "کارمند"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__id
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand__id
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model__id
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product__id
+msgid "ID"
+msgstr "آی دی"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__message_needaction
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__message_has_error
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__is_asset1
+msgid "Is Asset1"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng____last_update
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand____last_update
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model____last_update
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product____last_update
+msgid "Last Modified on"
+msgstr "تاریخ آخرین تغییر"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__write_uid
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand__write_uid
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model__write_uid
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product__write_uid
+msgid "Last Updated by"
+msgstr "آخرین بروز رسانی توسط"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__write_date
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_brand__write_date
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model__write_date
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product__write_date
+msgid "Last Updated on"
+msgstr "تاریخ اخرین برویز رسانی"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__location
+msgid "Location"
+msgstr "مکان"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__mac_address
+msgid "MAC Address"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__product_model
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_model__model
+msgid "Model"
+msgstr "مدل"
+
+#. module: asset_mng
+#: model:ir.ui.menu,name:asset_mng.models_setting
+msgid "Models"
+msgstr "مدل ها"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__partner
+msgid "Partner"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__place
+msgid "Place"
+msgstr "محل"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_product__product
+msgid "Product"
+msgstr "کالا"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__product
+msgid "Product Name"
+msgstr "نام کالا"
+
+#. module: asset_mng
+#: model:ir.ui.menu,name:asset_mng.products
+msgid "Products"
+msgstr "کالاها"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__activity_user_id
+msgid "Responsible User"
+msgstr "مسئول"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: asset_mng
+#: model_terms:ir.ui.view,arch_db:asset_mng.asset_mng_list_search
+msgid "Search Useable Assets"
+msgstr "جستجوی کالای قابل استفاده"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__serial_number
+msgid "Serial Number"
+msgstr "شماره سریال"
+
+#. module: asset_mng
+#: model:ir.ui.menu,name:asset_mng.settings
+msgid "Settings"
+msgstr "تنظیمات"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__state
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__temp
+msgid "Temp"
+msgstr "فیلد موقف"
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields.selection,name:asset_mng.selection__asset_mng_asset_mng__availability__repair
+msgid "Under Reapir"
+msgstr "درحال تعمیر"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: asset_mng
+#: model_terms:ir.ui.view,arch_db:asset_mng.asset_mng_list_search
+msgid "Useable Assets"
+msgstr "دارایی قابل استفاده"
+
+#. module: asset_mng
+#: model:ir.model.fields.selection,name:asset_mng.selection__asset_mng_asset_mng__availability__useless
+msgid "Useless"
+msgstr "غیر قابل استفاده"
+
+#. module: asset_mng
+#: model:ir.model.fields,field_description:asset_mng.field_asset_mng_asset_mng__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields,help:asset_mng.field_asset_mng_asset_mng__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model,name:asset_mng.model_asset_mng_asset_mng
+msgid "asset_mng.asset_mng"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model,name:asset_mng.model_asset_mng_brand
+msgid "asset_mng.brand"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model,name:asset_mng.model_asset_mng_model
+msgid "asset_mng.model"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model,name:asset_mng.model_asset_mng_product
+msgid "asset_mng.product"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields.selection,name:asset_mng.selection__asset_mng_asset_mng__state__read
+msgid "read"
+msgstr ""
+
+#. module: asset_mng
+#: model:ir.model.fields.selection,name:asset_mng.selection__asset_mng_asset_mng__state__write
+msgid "write"
+msgstr ""

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Read barcode from a video input. This sample demonstrates the default built-in UI.">
+    <meta name="keywords" content="read barcode from video, built-in ui">
+    <title>Dynamsoft Barcode Reader Sample - Video Decoding with Default UI</title>
+<!--    <link rel="canonical" href="https://demo.dynamsoft.com/Samples/DBR/JS/2.ui-tweaking/1.read-video-show-result.html">-->
+</head>
+
+<body>
+    <h1 style="font-size: 1.5em;">Use the Default Built-in UI</h1>
+    <input type="text" id="result" title="Double click to clear!" readonly="true" class="latest-result" placeholder="The Last Read Barcode">
+    <div id="UIElement" class="UIElement">
+        <span id='lib-load' style='font-size:x-large' hidden>Loading Library...</span><br />
+        <button id="showScanner" hidden>Show The Scanner</button>
+    </div>
+    <div>
+        <span style="float:left;margin-top:20px;">All Results:</span><br />
+        <div id="results"></div>
+    </div>
+    <script src="dbr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.3.1/dist/dbr.js"></script>
+    <script src="dbr_script.js"></script>
+    <script>
+
+    </script>
+</body>
+<style>
+    button#showScanner {
+        position: absolute;
+        width: 50%;
+        left: 25%;
+        top: 30%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100vw;
+        height: 90vh;
+        color: #455A64;
+        margin: 0;
+    }
+
+    button {
+        font-size: 1.5rem;
+        margin-bottom: 2vh;
+    }
+
+    span {
+        font-size: 0.8rem;
+    }
+
+    .latest-result {
+        display: block;
+        margin: 0;
+        padding: 0.4rem 0.8rem;
+        color: inherit;
+        min-width: 40vw;
+        width: auto;
+        border: none;
+        font-size: 1rem;
+        border-radius: 0.2rem;
+        text-align: center;
+    }
+
+    .latest-result::placeholder {
+        color: #B0BEC5;
+    }
+
+    .latest-result:focus {
+        outline: none;
+        box-shadow: 0.1rem 0.4rem 0.8rem #fe8e14;
+    }
+
+    #results {
+        border: 1px dashed grey;
+        overflow: auto;
+        width: 80vw;
+        padding: 2vmin;
+        margin-bottom: 3vh;
+        height: 15vh;
+    }
+
+    .resultText {
+        color: #cE5E04
+    }
+
+    .bigger {
+        font-size: large;
+        margin-bottom: 2%;
+    }
+
+    #UIElement {
+        margin: 2vmin auto;
+        text-align: center;
+        font-size: medium;
+        height: 40vh;
+        width: 80vw;
+    }
+
+    #UIElement img {
+        max-width: 100%;
+        max-height: 90%;
+        border: solid 1px gray;
+    }
+</style>
+
+</html>

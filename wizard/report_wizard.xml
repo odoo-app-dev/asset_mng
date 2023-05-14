@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="asset_mng_report_wizard_wizard_form" model="ir.ui.view">
+            <field name="name">asset_mng.report.wizard.form</field>
+            <field name="model">asset_mng.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                        <group>
+                            <field name="location" />
+                        </group>
+                    <group>
+                        <group>
+                            <field name="department" widget="many2many_checkboxes"/>
+                        </group>
+                        <group>
+                            <field name="product" widget="many2many_checkboxes"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="print_asset_reprot" string="Print" type="object" class="btn-primary"/>
+                        <button string="Cancel" special="cancel" class="btn-secondary"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="asset_mng_report_wizard_wizard_action" model="ir.actions.act_window">
+            <field name="name">Connection Test Result</field>
+            <field name="res_model">asset_mng.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+        <menuitem name="Asset Report" id="asset_mng.assets_report" parent="asset_mng.menu_root"
+                  action="asset_mng.asset_mng_report_wizard_wizard_action"/>
+    </data>
+</odoo>
+

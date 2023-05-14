@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="asset_mng_device_list_report">
+            <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <div class="device_list_report">
+                            <p t-out="location + '\t\t\t ' + date_time[0]['date']"> </p>
+<!--                            <span t-out="date_time[0]['date']"/>-->
+                            <table class="asset_mng_reprot_table">
+                                <thead>
+                                    <tr>
+                                        <t t-foreach="data_table[0]" t-as="header">
+                                            <th t-out="header"> </th>
+                                        </t>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="data_table[1:-2]" t-as="row">
+                                        <tr>
+                                            <t t-foreach="row" t-as="col">
+                                                <td t-out="col"> </td>
+                                            </t>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <t t-foreach="data_table[-1]" t-as="col">
+                                            <td t-out="col"> </td>
+                                        </t>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

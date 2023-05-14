@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.module.category" id="module_category_asset_mng">
+        <field name="name">Asset Management</field>
+        <field name="description">Assets.</field>
+    </record>
+
+    <record id="group_asset_mng_users" model="res.groups">
+        <field name="name">Users</field>
+        <field name="category_id" ref="module_category_asset_mng"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_asset_mng_admins" model="res.groups">
+        <field name="name">Administrators</field>
+        <field name="category_id" ref="module_category_asset_mng"/>
+        <field name="implied_ids" eval="[(4, ref('group_asset_mng_users'))]"/>
+    </record>
+
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('asset_mng.group_asset_mng_admins'))]"/>
+    </record>
+
+</odoo>

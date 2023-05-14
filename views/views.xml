@@ -1,0 +1,254 @@
+<odoo>
+    <data>
+        <!-- ==================================================  asset_mng.asset_mng ====================-->
+
+        <record model="ir.ui.view" id="asset_mng.list">
+            <field name="name">AssetMng list</field>
+            <field name="model">asset_mng.asset_mng</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="com" invisible="1"/>
+                    <field name="active" invisible="1"/>
+                    <field name="asset_id"/>
+                    <field name="product"/>
+                    <field name="product_brand"/>
+                    <field name="product_model"/>
+                    <field name="employee"/>
+                    <field name="parent_department"/>
+                    <field name="location"/>
+                    <field name="place"/>
+                    <field name="state" attrs="{'invisible': [(1, '=', 1)]}" groups="base.group_system"/>
+                    <groupby name="product">
+                        <button string="Print" name="print_asset_reprot_group" type="object"
+                                context="{'active_id': active_id}"/>
+                    </groupby>
+                </tree>
+            </field>
+        </record>
+
+        <!-- TODO: "account.view_account_journal_group_tree" as a sample: [sale/settings/jurnal groups]-->
+
+        <record model="ir.ui.view" id="asset_mng.pivot">
+            <field name="name">AssetMng Pivot</field>
+            <field name="model">asset_mng.asset_mng</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="product" type="row"/>
+                    <field name="location" type="col"/>
+                    <field name="state" attrs="{'invisible': [(1, '=', 1)]}" groups="base.group_system"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="asset_mng.form">
+            <field name="name">AssetMng Form</field>
+            <field name="model">asset_mng.asset_mng</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="active" invisible="1"/>
+                        <field name="state" attrs="{'invisible': [(1, '=', 1)]}" groups="base.group_system"/>
+                        <field name="is_asset1" widget='boolean_toggle' groups="base.group_system"/>
+                        <div class="oe_title">
+
+                            <label for="asset_id"/>
+
+                            <span>
+
+                                <field name="pattern_sample"/>
+                            </span>
+
+                            <h1>
+                                <field name="asset_id"
+                                       attrs="{'required':[('is_asset1','=',True)],'readonly':[('is_asset1','=',False)],}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <!--                    <field name="com" invisible="1"/>-->
+
+                                <field name="availability" widget='radio' options="{'horizontal': true}"/>
+                                <field name="performance"/>
+                                <field name="product"/>
+                                <field name="product_brand" style="text-align:left !important; direction:ltr;"/>
+                                <field name="product_model" style="text-align:left !important; direction:ltr;"/>
+                                <field name="device_name" style="text-align:left !important; direction:ltr;"/>
+                                <field name="serial_number" style="text-align:left !important; direction:ltr;"
+                                       attrs="{'required':[('is_asset1','=',False)]}"/>
+                                <field name="mac_address" style="text-align:left !important; direction:ltr;"/>
+
+
+                            </group>
+                            <group>
+                                <field name="company"/>
+                                <field name="location"/>
+                                <field name="place"/>
+                                <!--                                <field name="partner"/>-->
+                                <field name="employee"/>
+                                <!--                                <field name="parent_department" />-->
+                                <field name="date"/>
+                            </group>
+                        </group>
+                        <!--                        <group>-->
+                        <!--                            <field name="temp"/>-->
+
+                        <!--                        </group>-->
+                        <notebook>
+                            <page name="description_page" string="Description">
+                                <field name="description" type="html" options="{'collaborative': true}"/>
+                            </page>
+
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_ids"/>
+
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="asset_mng_list_search">
+            <field name="name">Useable</field>
+            <field name="model">asset_mng.asset_mng</field>
+
+            <field name="arch" type="xml">
+                <search string="Search Useable Assets">
+                    <field name="asset_id"/>
+                    <field name="product"/>
+                    <field name="product_brand"/>
+                    <field name="product_model"/>
+                    <field name="location"/>
+                    <field name="place"/>
+                    <field name="employee"/>
+                    <field name="serial_number"/>
+                    <field name="mac_address"/>
+                    <!--                    <field name="parent_department"/>-->
+                    <filter string="Usable Assets" name="usable_assets"
+                            domain="['|','&amp;',('availability', '=', 'available'),('availability', '=', 'repair'),('active', '=', True)]"/>
+                    <separator/>
+                    <filter string="All" name="all" domain="['|', ('active', '=', False), ('active', '=', True)]" />
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Location" name="group_by_location"
+                                context="{'group_by': 'location'}"/>
+                        <!--                    </group>-->
+                        <!--                    <group expand="1" string="Group By">-->
+
+                        <filter string="Department" name="group_by_parent_department"
+                                context="{'group_by': 'parent_department'}"/>
+                        <filter string="Product" name="group_by_product"
+                                context="{'group_by': 'product'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- ==================================================  asset_mng.performance ====================-->
+
+        <record model="ir.ui.view" id="asset_mng.performance_list">
+            <field name="name">AssetMng Performance List</field>
+            <field name="model">asset_mng.performance</field>
+            <field name="arch" type="xml">
+                <tree editable="top">
+                    <field name="performance"/>
+                    <field name="performance_level"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- ==================================================  sd_apps.SETTINGS ====================-->
+
+        <record model="ir.actions.act_window" id="asset_mng.action_window_assets_groups">
+            <field name="name">AssetMng window</field>
+            <field name="res_model">asset_mng.asset_mng</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context">{
+                'search_default_useable_assets': 1,
+                'search_default_group_by_location': 1,
+                'search_default_group_by_parent_department': 2,
+                'search_default_group_by_product': 3,
+                }
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asset_mng.action_window_assets">
+            <field name="name">AssetMng window</field>
+            <field name="res_model">asset_mng.asset_mng</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context">{'search_default_useable_assets': 1}</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asset_mng.products_action_window">
+            <field name="name">AssetMng window</field>
+            <field name="res_model">asset_mng.product</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asset_mng.brand_action_window">
+            <field name="name">AssetMng window</field>
+            <field name="res_model">asset_mng.brand</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asset_mng.model_action_window">
+            <field name="name">AssetMng window</field>
+            <field name="res_model">asset_mng.model</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asset_mng.model_action_window_performance">
+            <field name="name">AssetMng Performance</field>
+            <field name="res_model">asset_mng.performance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- ==================================================  sd_apps.SETTINGS ====================-->
+
+        <menuitem name="Asset Management" id="asset_mng.menu_root"
+                  action="asset_mng.action_window_assets_groups"/>
+
+        <menuitem name="Assets" id="asset_mng.assets" parent="asset_mng.menu_root"/>
+
+        <menuitem name="Asset Grouped" id="asset_mng.assets_groups" parent="asset_mng.assets"
+                  action="asset_mng.action_window_assets_groups"/>
+
+        <menuitem name="Asset List" id="asset_mng.assets_list" parent="asset_mng.assets"
+                  action="asset_mng.action_window_assets"/>
+
+        <menuitem name="Configuration"
+                  id="asset_mng.config_menu"
+                  parent="asset_mng.menu_root"
+                  groups="asset_mng.group_asset_mng_admins"/>
+
+        <menuitem name="Products"
+                  id="asset_mng.products"
+                  parent="asset_mng.config_menu"
+                  action="asset_mng.products_action_window"
+                  groups="asset_mng.group_asset_mng_admins"/>
+
+        <menuitem name="Brands"
+                  id="asset_mng.brands_setting"
+                  parent="asset_mng.config_menu"
+                  action="asset_mng.brand_action_window"
+                  groups="asset_mng.group_asset_mng_admins"/>
+
+        <menuitem name="Models"
+                  id="asset_mng.models_setting"
+                  parent="asset_mng.config_menu"
+                  groups="group_asset_mng_admins"
+                  action="asset_mng.model_action_window"
+        />
+
+        <menuitem name="performance"
+                  id="asset_mng.performance_menu"
+                  parent="asset_mng.config_menu"
+                  groups="group_asset_mng_admins"
+                  action="asset_mng.model_action_window_performance"
+        />
+        <!-- actions -->
+
+    </data>
+</odoo>

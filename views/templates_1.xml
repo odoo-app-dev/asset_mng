@@ -1,0 +1,279 @@
+<odoo>
+    <data>
+        <template id="barcode1">
+            <link rel="stylesheet" href="static/src/css/quagga_1.scss"/>
+
+            <script src="static/src/js/jquery.min.js"> </script>
+            <script src="static/src/js/underscore.1.4.4.js"> </script>
+            <script src="static/src/js/quagga.js"> </script>
+
+            <t t-set="title">attendance</t>
+            <div class="oe_structure">
+                <div>
+                    <div class="container">
+                        <div>
+                            <p > Fast Read: <span id="qr-out1" style="font-size:2em;"> </span></p>
+                            <p > Repeated Read: <span id="qr-out2" style="font-size:2em;"> </span></p>
+                            <p id="video-size">video-size</p>
+                            <p id="patch-size">patch-size</p>
+                            <p id="scannerCamEl">scannerCamEl</p>
+
+                        </div>
+                        <div class="scann-frame" id="scann-frame"  >
+                        <div class="scanner-cam" id="scanner-cam"  > </div>
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+            <script src="static/src/js/code_2.js"> </script>
+        </template>
+
+        <template id="barcode2">
+            <t t-set="title">attendance</t>
+            <script src="static/src/js/jquery.min.js"> </script>
+            <script src="static/src/js/quagga.js"> </script>
+            <div class="oe_structure">
+                <div class="wrapper">
+                    <div class="content">
+                        <strong>Scanned codes:</strong>
+                        <ul class="codes-list"> </ul>
+                        <p id="qr-out">QR Code</p>
+                        <p id="video-size">video-size</p>
+                        <p id="patch-size">patch-size</p>
+                        <p id="consoleLog">consoleLog</p>
+                        <select id="cameraList"> </select>
+                    </div>
+                    <div class="scanner-cam"> </div>
+                </div>
+                <script src="static/src/js/1.js"> </script>
+            </div>
+        </template>
+
+        <template id="barcode">
+            <t t-set="title">attendance</t>
+            <div class="oe_structure asset_website">
+                <div>
+<!--                    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"/>-->
+                    <script src="static/src/js/html5-qrcode.2.2.3.js" type="text/javascript"/>
+<!--                    <script src="https://unpkg.com/html5-qrcode@2.2.3/html5-qrcode.min.js" type="text/javascript"/>-->
+<!--                    <p id="features" style="text-align:center; font-size:3em;">features</p>-->
+                    <link rel="stylesheet" href="static/src/css/my-style.scss"/>
+
+                    <div class="container" >
+                        <div id="qr-reader" >
+                        </div>
+                        <div>
+                            <p id="qr-out" style="text-align:center; font-size:3em;">qr-out</p>
+                            <p id="orientation" style="text-align:center; font-size:3em;">orientation</p>
+                            <p id="orientation2" style="text-align:center; font-size:3em;">orientation</p>
+                            <div class="asset_text">
+                            <p><span class="asset_text_label">Name: </span><span id="received_name" class="asset_text_value"></span></p>
+                            <p><span class="asset_text_label">Location: </span><span id="received_location" class="asset_text_value"></span></p>
+
+
+                            </div>
+                            <p id="correctness" style="text-align:center; font-size:3em;"></p>
+
+                        </div>
+
+                    </div>
+                    <div class="asset-buttons">
+                        <div class="correct">
+
+                        <button id="correct" value="Correct" class="btn btn-primary-1" onclick="correct_btn()">Correct</button>
+                        </div>
+                        <div class="not-correct">
+
+                        <button id="not_correct" value="Not Correct" class="btn btn-secondary-1" onclick="notcorrect_btn()">Not Correct</button>
+                        </div>
+                    </div>
+                </div>
+<!--                <script src="static/src/js/html5-qrcode.js"></script>-->
+
+                <script>
+                    function correct_btn(){
+<!--                    console.log("correct_btn");-->
+                    document.getElementById("correctness").innerHTML = "Correct";
+                    }
+                    function notcorrect_btn(){
+<!--                    console.log("not correct_btn");-->
+                    document.getElementById("correctness").innerHTML = "Not Correct";
+                    }
+                    let orientation;
+                    const default_Width = 1920;
+                    const default_Height = 1080;
+                    let ratio = default_Height/default_Width;
+                    const is_portrait = window.matchMedia("(orientation: portrait)").matches;
+                    if(is_portrait){
+                    orientation = "Portrait";
+                    } else {
+                    orientation = "Landscape";}
+                    if(is_portrait  &amp;&amp; screen.width &lt; screen.height){
+                        thisWidth = default_Width;
+                        thisHeight = default_Height;
+                    } else {
+                        thisWidth = default_Width;
+                        thisHeight = default_Height;
+                    }
+
+                    document.getElementById("orientation").innerHTML = orientation + " " + ratio + " W:" + screen.width+ " H:" + screen.height;
+                    document.getElementById("orientation2").innerHTML = "thisWidth:" + thisWidth + " thisHeight:" + thisHeight;
+                    console.log( " ratio: " + ratio );
+
+                    function onScanSuccess(decodedText, decodedResult) {
+                        console.log(`Code scanned = ${decodedText}`, decodedResult);
+                        document.getElementById("qr-out").innerHTML = decodedText;
+                                const request = new XMLHttpRequest();
+
+                        request.open("POST", "/asset_mng/barcodeout");
+                        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                        request.onload = function() {
+                            received = JSON.parse(request.responseText)
+                          console.log(received);
+                          document.getElementById("received_name").innerHTML = received["name"];
+                          document.getElementById("received_location").innerHTML = received["location"];
+
+                        };
+                                    console.log("code=" + decodedText);
+                                    var data = "code=" + decodedText;
+
+                        request.send(data);
+
+                    received = fetch("/asset_mng/barcodeout", method="POST", data=data)
+                          document.getElementById("received_name").innerHTML = received["name"];
+                          document.getElementById("received_location").innerHTML = received["location"];
+
+                        }
+
+                    var html5QrcodeScanner = new Html5QrcodeScanner(
+                            "qr-reader",
+<!--                    {facingMode:  "environment" },-->
+                    { qrbox: {width:600, height:300}, formats: ["code_128"],
+                    rememberLastUsedCamera: true,
+                    supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA],
+                                            videoConstraints:{
+                                                    facingMode:  "environment" ,
+                                                    aspectRatio: ratio,
+                                                    width:  thisWidth,
+                                                    height: thisHeight,
+                                                    frameRate: 20,
+<!--                                                brightness: 0.2,-->
+<!--                                                zoom: 2,-->
+                    advanced: [{contrast: "manual", contrast: 1.5 , }],
+
+                        <!--                    pan: true,-->
+                        <!--                    tilt: true,-->
+<!--                                                zoom: true,-->
+                        <!--                    contrast: true,-->
+                        <!--                    saturation: true,-->
+                        <!--                    sharpness: true-->
+
+                                                    }});
+                    html5QrcodeScanner.render(onScanSuccess);
+
+
+                </script>
+            </div>
+        </template>
+
+        <template id="barcode4">
+            <t t-set="title">attendance</t>
+            <div class="oe_structure">
+                <div>
+                    <div id="qr-reader" style="width:600px"></div>
+                    <div id="qr-reader-results"></div>
+                    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"/>
+                    <script>
+                        function docReady(fn) {
+                        // see if DOM is already available
+                        if (document.readyState === "complete"
+                        || document.readyState === "interactive") {
+                        // call on next available tick
+                        setTimeout(fn, 1);
+                        } else {
+                        document.addEventListener("DOMContentLoaded", fn);
+                        }
+                        }
+
+                        docReady(function () {
+                        var resultContainer = document.getElementById('qr-reader-results');
+                        var lastResult, countResults = 0;
+                        function onScanSuccess(decodedText, decodedResult) {
+                        if (decodedText !== lastResult) {
+                        ++countResults;
+                        lastResult = decodedText;
+                        // Handle on success condition with the decoded message.
+                        console.log(`Scan result ${decodedText}`, decodedResult);
+                        }
+                        }
+
+                        var html5QrcodeScanner = new Html5QrcodeScanner(
+                        "qr-reader", { fps: 10, qrbox: 500 });
+                        html5QrcodeScanner.render(onScanSuccess);
+                        });
+                    </script>
+                </div>
+            </div>
+        </template>
+
+        <template id="barcode5">
+            <t t-set="title">attendance</t>
+            <div class="oe_structure">
+                <div>
+                    <video id="video" width="1920" height="1080" autoplay="true"></video>
+
+                </div>
+                <div>
+                    <p id="constraintList">constraintList</p>
+                </div>
+                <script src="./static/src/js/video2.js"></script>
+            </div>
+        </template>
+
+        <template id="barcode6">
+            <t t-set="title">attendance</t>
+            <div class="oe_structure">
+                    <p id="qr-out">qr-out</p>
+                    <p id="error_out"></p>
+                    <video id="stream" style="width: 100vw; height: 100vh;"/>
+                <script>
+                    if (!("BarcodeDetector" in window)) {
+  document.getElementById("error_out").innerHTML = "Barcode Detector is not supported by this browser.";
+} else {
+                      document.getElementById("error_out").innerHTML = "Barcode Detector supported!";
+
+  console.log("Barcode Detector supported!");
+                    }
+                   (async () => {
+const stream = await navigator.mediaDevices.getUserMedia({
+  video: {
+    facingMode: {
+      ideal: "environment"
+    },
+    width: 3420,
+    height:1080,
+  },
+  audio: false
+});
+const videoEl = document.querySelector("#stream");
+videoEl.srcObject = stream;
+await videoEl.play();
+
+const barcodeDetector = new BarcodeDetector({formats: ['qr_code', "code_128",]});
+window.setInterval(async () => {
+  const barcodes = await barcodeDetector.detect(videoEl);
+  if (barcodes.length = 0) return;
+  alert(barcodes.map(barcode => barcode.rawValue));
+  document.getElementById("qr-out").innerHTML = barcodes.map(barcode => barcode.rawValue);
+}, 1000)
+})();
+
+                </script>
+            </div>
+        </template>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,133 @@
+.asset_mng_reprot_table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.7em;
+    min-width: 400px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+}
+
+.asset_mng_reprot_table thead tr{
+    background-color: #404060;
+    color: #ffffff;
+    text-align: right;
+    font-weight: bold;
+}
+
+.asset_mng_reprot_table th,
+.asset_mng_reprot_table td {
+    font-size: .7em;
+    padding: 12px 15px;
+}
+
+.asset_mng_reprot_table tbody tr{
+    border-button: 1px solid #dddddd;
+}
+
+.asset_mng_reprot_table tbody tr:nth-of-type(even) {
+    background-color: #40406030;
+}
+
+.asset_mng_reprot_table tfoot tr {
+    background-color: #404060;
+    color: #ffffff;
+}
+
+.device_list_report{
+    padding: 0 50px 50px 50px;
+}
+
+
+.assets-qr-reader button{
+font-size: 1em !important;
+}
+
+#qr-reader__dashboard_section_csr{
+font-size: 2em;
+}
+.asset_website{
+font-family: IRANSans !important;
+// max-width: 600px;
+}
+
+.asset_access_denied{
+text-align: center !important;
+}
+
+.asset_footer{
+    margin: 200px;
+    height: 80px;
+    background: rebeccapurple;
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.asset_home{
+margin: 20px;
+}
+.asset_text{
+min-height: 200px;
+padding: 30px
+}
+
+
+.asset_text_label {
+font-size: 3em;
+}
+
+.asset_text_value {
+font-size: 3em;
+font-weight: bold;
+}
+
+.asset-buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-primary-1{
+    padding: 30px;
+    background: #398d39;
+    color: white;
+    font-weight: bold;
+    font-size: 4em;
+    border-radius: 15px;
+    border: 0;
+}
+.btn-secondary-1{
+    padding: 30px;
+    background: #7d3a3a;
+    color: white;
+    font-weight: bold;
+    font-size: 4em;
+    border-radius: 15px;
+    border: 0;
+}
+
+#qr-reader__scan_region{
+  overflow:hidden;
+}
+
+#qr-shaded-region{
+  -moz-transform:scale(3);
+  -webkit-transform:scale(3);
+  -o-transform:scale(3);
+  -ms-transform:scale(3);
+  transform:scale(3);
+}
+#qr-reader__scan_region video{
+  -moz-transform:scale(3);
+  -webkit-transform:scale(3);
+  -o-transform:scale(3);
+  -ms-transform:scale(3);
+  transform:scale(3);
+
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="asset_mng_pc_list" model="report.paperformat">
+    <field name="name">Asset List Format</field>
+    <field name="default" eval="True"/>
+    <field name="format">custom</field>
+    <field name="page_height">297</field>
+    <field name="page_width">210</field>
+    <field name="orientation">Landscape</field>
+    <field name="margin_top">10</field>
+    <field name="margin_bottom">10</field>
+    <field name="margin_left">10</field>
+    <field name="margin_right">10</field>
+    <field name="header_line" eval="False"/>
+    <field name="header_spacing">3</field>
+    <field name="dpi">80</field>
+</record>
+
+    <record id="action_report_asset_mng_pc_list" model="ir.actions.report">
+        <field name="name">OEID ICT Devices list</field>
+        <field name="model">asset_mng.product</field>
+        <field name="report_type">qweb-html</field>
+<!--        <field name="report_type">xlsx</field>-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+        <field name="report_name">asset_mng.asset_mng_device_list_report</field>
+        <field name="report_file">asset_mng.asset_mng_device_list_report</field>
+        <field name="print_report_name">'oeid_ict_%s' % (object.name)</field>
+        <field name="paperformat_id" ref="asset_mng_pc_list"/>
+        <field name="binding_model_id" ref="model_asset_mng_asset_mng"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+<!--    <record id="present_report_employees" model="ir.actions.report">-->
+<!--        <field name="name">Present Employees</field>-->
+<!--        <field name="model">sd_employee.report</field>-->
+<!--&lt;!&ndash;        <field name="report_type">qweb-html</field>&ndash;&gt;-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+<!--        <field name="report_name">sd_employee.present_employees</field>-->
+<!--        <field name="report_file">sd_employee.present_employees</field>-->
+<!--        <field name="print_report_name">'employees'</field>-->
+<!--        <field name="binding_model_id" ref="model_sd_employee_report"/>-->
+<!--        <field name="binding_type">report</field>-->
+<!--    </record>-->
+</odoo>
