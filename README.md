@@ -1,5 +1,5 @@
 # Asset Management (asset_mng)
-0.2.2.4
+0.2.2.4 git
 
 
 0.2.2.3
